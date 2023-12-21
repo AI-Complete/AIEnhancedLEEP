@@ -1,0 +1,69 @@
+{
+    "folders": [
+        {
+            "path": "AIEnhancedLEEP"
+        }
+    ],
+    "settings": {
+        "python.pythonPath": "env/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.pylintArgs": [
+            "--disable=C0111",
+            "--max-line-length=120"
+        ],
+        "python.formatting.autopep8Path": "env/bin/autopep8",
+        "python.formatting.autopep8Args": [
+            "--max-line-length=120"
+        ],
+        "python.testing.unittestEnabled": true,
+        "python.testing.pytestEnabled": true,
+        "editor.formatOnSave": true,
+        "files.exclude": {
+            "**/__pycache__": true,
+            "**/*.pyc": true
+        },
+        "debug.python.showReturnValue": true,
+        "extensions.recommendations": [
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "ms-toolsai.jupyter",
+            "ms-vscode.cpptools",
+            "eamodio.gitlens",
+            "visualstudioexptteam.vscodeintellicode"
+        ],
+        "tasks": {
+            "version": "2.0.0",
+            "tasks": [
+                {
+                    "label": "Run Unit Tests",
+                    "type": "shell",
+                    "command": "pytest",
+                    "group": "test"
+                },
+                {
+                    "label": "Build Documentation",
+                    "type": "shell",
+                    "command": "make html",
+                    "group": "build",
+                    "presentation": {
+                        "reveal": "always",
+                        "panel": "new"
+                    }
+                }
+            ]
+        },
+        "launch": {
+            "version": "0.2.0",
+            "configurations": [
+                {
+                    "name": "Python: Current File",
+                    "type": "python",
+                    "request": "launch",
+                    "program": "${file}",
+                    "console": "integratedTerminal"
+                }
+            ]
+        }
+    }
+}
